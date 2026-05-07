@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_app/core/constant/card.dart';
+import 'package:movie_app/core/constant/skelton_list.dart';
+import 'package:movie_app/core/constant/service_locator.dart';
 import 'package:movie_app/core/utils/colors.dart';
 import '../bloc/popular/popular_bloc.dart';
 import '../bloc/popular/popular_state.dart';
@@ -10,7 +13,7 @@ class PopulerSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<PopularCubit>(
-      create: (_) => getIt<PopularCubit>()..loadPopular(),
+      create: (context) => getIt<PopularCubit>()..loadPopular(),
       child: BlocBuilder<PopularCubit, PopularState>(
         builder: (BuildContext context, PopularState state) {
           if (state is PopularLoading) {
@@ -21,7 +24,7 @@ class PopulerSection extends StatelessWidget {
             return Center(
               child: Text(
                 state.message,
-                style: const TextStyle(color: AppTheme.lightText),
+                style: const TextStyle(color: AppColors.primaryTextColor),
               ),
             );
           }
@@ -44,7 +47,7 @@ class PopulerSection extends StatelessWidget {
                   child: Text(
                     'Popular',
                     style: TextStyle(
-                      color: AppTheme.lightText,
+                      color: AppColors.primaryTextColor,
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
                     ),
