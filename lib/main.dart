@@ -19,7 +19,10 @@ class _MovieAppState extends State<MovieApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        //  bottomNavigationBar: BottomNavBarWidget,
+        bottomNavigationBar: BottomNavBarWidget(
+          onTap: (index) {},
+          selectedIndex: stackIndex,
+        ),
       ),
     );
   }
