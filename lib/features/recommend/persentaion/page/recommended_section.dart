@@ -4,6 +4,7 @@ import 'package:movie_app/core/constant/card.dart';
 import 'package:movie_app/core/constant/service_locator.dart';
 import 'package:movie_app/core/constant/skelton_list.dart';
 import 'package:movie_app/core/utils/colors.dart';
+import 'package:movie_app/features/watchlist/domain/entities/watchlist_movie.dart';
 
 import '../view_model/recommended_cubit.dart';
 import '../view_model/recommended_state.dart';
