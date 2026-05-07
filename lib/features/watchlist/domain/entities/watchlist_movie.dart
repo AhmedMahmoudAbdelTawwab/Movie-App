@@ -1,3 +1,5 @@
+import 'package:movie_app/features/search/domain/entities/search_movie_entity.dart';
+
 class WatchlistMovie {
   final int id;
   final String title;
