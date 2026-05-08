@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/features/search/presentation/bloc/page/search_screen.dart';
 
 class SearchScreen extends StatelessWidget {
   static const String routeName = 'SearchScreen';

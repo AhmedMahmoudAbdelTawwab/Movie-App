@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:movie_app/core/constant/service_locator.dart';
 import 'package:movie_app/core/utils/colors.dart';
 import 'package:movie_app/core/utils/images.dart';
+import 'package:movie_app/features/detailes/presentation/view/screens/detailes_screen.dart';
 import 'package:movie_app/features/detailes/presentation/view_model/detailes/detailes_cubit.dart';
 import 'package:movie_app/features/watchlist/domain/entities/watchlist_movie.dart';
 import 'package:movie_app/features/watchlist/presentation/bloc/watchlist_bloc.dart';
@@ -62,7 +63,7 @@ class MovieCard extends StatelessWidget {
                             ),
                     ),
                     Image.network(
-                      Api.getPosterUrl(imagePath),
+                      getPosterUrl(imagePath),
                       fit: BoxFit.cover,
                       width: double.infinity,
                       height: double.infinity,
@@ -159,4 +160,12 @@ class MovieCard extends StatelessWidget {
       ),
     );
   }
+}
+
+String getPosterUrl(String? path) {
+  String imageBaseUrl = 'https://image.tmdb.org/t/p/';
+  String posterSize = 'w500';
+  if (path == null || path.isEmpty) return '';
+  if (path.startsWith('http')) return path;
+  return '$imageBaseUrl$posterSize$path';
 }

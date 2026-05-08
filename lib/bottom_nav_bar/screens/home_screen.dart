@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/features/populer/presentation/page/home_page.dart';
+import 'package:movie_app/features/recommend/persentaion/page/recommended_section.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String routeName = 'HomeScreen';
