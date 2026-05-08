@@ -10,9 +10,8 @@ class BottomNavBarWidget extends StatelessWidget {
     required this.selectedIndex,
   });
   final void Function(int)? onTap;
-  final int selectedIndex = 0;
+  final int selectedIndex;
 
-  final 
   @override
   Widget build(BuildContext context) {
     return Container(
