@@ -7,12 +7,11 @@ import '../../network/statess.dart';
 @injectable
 class RecommendedApi {
   static const String apiKey = "9d7f94be913eddf2db40e317d2f12f36";
-  static const String baseUrl = "https://api.themoviedb.or";
+  static const String baseUrl = "https://api.themoviedb.org";
 
   Future<RecommendedResultApi<RecommendedDto>> getRecommended() async {
     try {
-      Uri url = Uri.parse('$baseUrl?api_key=$apiKey');
-
+      Uri url = Uri.parse('$baseUrl/3/movie/popular?api_key=$apiKey');
       var response = await http.get(url);
       if (response.statusCode >= 200 && response.statusCode <= 300) {
         var json = jsonDecode(response.body);

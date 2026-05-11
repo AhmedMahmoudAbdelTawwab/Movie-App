@@ -7,13 +7,11 @@ import 'package:movie_app/features/detailes/data/model/similer_dto.dart';
 
 @injectable
 class SimilarApi {
-  //api.themoviedb.org/3/movie/1419406/similar?api_key=9d7f94be913eddf2db40e317d2f12f36
-
   static const String apiKey = "9d7f94be913eddf2db40e317d2f12f36";
-  static const String baseUrl = "api.themoviedb.org";
+  static const String baseUrl = "https://api.themoviedb.org";
 
   Future<SimilarApiResultStates<SimilarDto>> getSimilarApi(int id) async {
-    final String url = '$baseUrl/movie/$id/similar?api_key=$apiKey}';
+    final String url = '$baseUrl/3/movie/$id/similar?api_key=$apiKey';
     try {
       final response = await http.get(Uri.parse(url));
       if (response.statusCode >= 200 && response.statusCode <= 300) {
