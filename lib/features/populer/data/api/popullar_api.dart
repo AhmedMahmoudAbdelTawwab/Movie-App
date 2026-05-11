@@ -10,7 +10,7 @@ import '../models/popular_responce_dto.dart';
 class PopularApi {
   static const String apiKey = "9d7f94be913eddf2db40e317d2f12f36";
   static const String endPoint = "/3/movie/popular";
-  static const String baseaseUrl = 'https://themoviedb.org';
+  static const String baseaseUrl = 'https://api.themoviedb.org';
   Future<ResultApi<PopularDto>> getPopular() async {
     final Uri url = Uri.parse('$baseaseUrl$endPoint?api_key=$apiKey');
     try {

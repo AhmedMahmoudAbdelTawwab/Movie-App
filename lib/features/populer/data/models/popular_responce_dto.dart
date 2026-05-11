@@ -4,9 +4,9 @@ class PopularDto {
   PopularDto(this.page, this.results, this.totalPages, this.totalResults);
 
   int? page;
-  List<Results>? results;
   int? totalPages;
   int? totalResults;
+  List<Results>? results;
 
   PopularDto.fromJson(Map<String, dynamic> json) {
     page = json['page'] as int?;
